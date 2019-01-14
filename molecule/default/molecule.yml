@@ -8,12 +8,20 @@ lint:
 platforms:
   - name: ubuntu
     image: ubuntu:bionic
+    pre_build_image: true
+    pull: true
   - name: centos
     image: centos:7
+    pre_build_image: true
+    pull: true
   - name: fedora
     image: fedora:29
+    pre_build_image: true
+    pull: true
   - name: debian
     image: debian:8
+    pre_build_image: true
+    pull: true
 provisioner:
   name: ansible
   lint:
