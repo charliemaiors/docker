@@ -1,7 +1,7 @@
 ---
 - name: Install mandatory packages centos
-  dnf: 
-    name: "{{ item }}" 
+  dnf:
+    name: "{{ item }}"
     state: present
   with_items:
     - dnf-plugins-core
@@ -12,6 +12,6 @@
   args:
     executable: /bin/bash
 - name: Install docker CE
-  dnf: 
-    name: docker-ce 
+  dnf:
+    name: docker-ce
     state: present

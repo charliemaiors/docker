@@ -2,6 +2,6 @@
 - name: install docker for archlinux
   pacman:
       state: present
-      upgrade: true      
+      upgrade: true     
       name: docker
       update_cache: true

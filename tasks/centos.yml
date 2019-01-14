@@ -1,7 +1,7 @@
 ---
 - name: Install mandatory packages centos
-  yum: 
-    name: "{{ item }}" 
+  yum:
+    name: "{{ item }}"
     state: present
   with_items:
     - epel-release
@@ -15,6 +15,6 @@
     state: present
     baseurl: "{{ rpm_repo }}"
 - name: Install docker CE
-  yum: 
-    name: docker-ce 
+  yum:
+    name: docker-ce
     state: present
