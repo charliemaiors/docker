@@ -13,7 +13,7 @@
   when: ansible_distribution == 'Archlinux'
 - name: install docker python libraries
   pip:
-      name: docker >= 2.1.0
+    name: docker >= 2.1.0
 - name: Start docker service
   systemd:
     name: docker
