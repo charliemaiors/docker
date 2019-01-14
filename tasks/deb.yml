@@ -1,0 +1,40 @@
+---
+- name: installing mandatory packages
+  apt: 
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+    - gnupg2
+    - python-pip
+- name: add docker repo key
+  apt_key:
+    url: "{{ deb_key }}"
+    state: present
+- name: set ansible_arch fact with x86_64
+  set_fact:
+    ansible_arch: amd64
+  when: ansible_machine == 'x86_64'
+- name: set ansible_arch fact with armv6l
+  set_fact:
+    ansible_arch: armhf
+  when: ansible_machine == 'armv6l'
+- name: set ansible_arch fact with armv7l
+  set_fact:
+    ansible_arch: arm64
+  when: ansible_machine == 'armv7l'
+- name: set ansible_arch fact with 
+- name: install docker repository
+  apt_repository:
+    repo: "{{ deb_repo }}"
+    state: present
+    update_cache: yes
+- name: install docker package
+  apt:
+    install_recommends: true
+    update_cache: true
+    name: docker-ce 
+    state: present

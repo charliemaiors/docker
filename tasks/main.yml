@@ -1,0 +1,19 @@
+---
+- name: include centos tasks
+  include_tasks: centos.yml
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+- name: include ubuntu tasks
+  include_tasks: deb.yml
+  when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+- name: include fedora tasks
+  include_tasks: fedora.yml
+  when: ansible_distribution == 'Fedora'
+- name: include archlinux tasks
+  include_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+- name: Start docker service
+  systemd:
+    name: docker
+    enabled: true
+    state: started
+  when: docker_start

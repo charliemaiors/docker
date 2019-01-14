@@ -1,0 +1,4 @@
+---
+deb_key: https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
+deb_repo: deb [arch={{ ansible_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ansible_distribution_release}} stable
+rpm_repo: https://download.docker.com/linux/{{ ansible_distribution | lower }}/docker-ce.repo
