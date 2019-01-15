@@ -19,7 +19,6 @@
   set_fact:
     ansible_arch: arm64
   when: ansible_machine == 'armv7l'
-- name: set ansible_arch fact with
 - name: install docker repository
   apt_repository:
     repo: "{{ deb_repo }}"
