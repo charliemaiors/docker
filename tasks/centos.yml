@@ -1,8 +1,13 @@
 ---
+- name: Install epel release
+  yum:
+    name: epel-release
+    state: present
 - name: Install mandatory packages centos
   yum:
-    name: ['epel-release', 'yum-utils', 'device-mapper-persistent-data', 'lvm2', 'python-setuptools', 'python-pip']
+    name: ['yum-utils', 'device-mapper-persistent-data', 'lvm2', 'python-setuptools', 'python-pip']
     state: present
+    update_cache: true
 - name: Add Docker repo
   get_url:
     url: "{{ rpm_repo }}"
