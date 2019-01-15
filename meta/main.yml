@@ -45,9 +45,9 @@ galaxy_info:
   #   - 7
   #   - 99.99
   - name: Ubuntu
-     versions:
-       - xenial
-       - bionic  
+      versions:
+        - xenial
+        - bionic  
 
   galaxy_tags: 
     - docker
