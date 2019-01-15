@@ -5,5 +5,5 @@
       upgrade: true
       name: docker
       update_cache: true
-      retries: 5
-      delay: 2
+  retries: 5
+  delay: 2

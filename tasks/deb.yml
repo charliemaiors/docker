@@ -3,8 +3,8 @@
   apt:
     name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'gnupg2', 'python-pip', 'python-setuptools']
     state: present
-    retries: 5
-    delay: 2
+  retries: 5
+  delay: 2
 - name: add docker repo key
   apt_key:
     url: "{{ deb_key }}"
@@ -32,5 +32,5 @@
     update_cache: true
     name: docker-ce
     state: present
-    retries: 5
-    delay: 2
+  retries: 5
+  delay: 2
