@@ -3,6 +3,8 @@
   dnf:
     name: ['dnf-plugins-core', 'python-dnf', 'python2']
     state: present
+    retries: 5
+    delay: 2
 - name: Add Docker repo
   get_url:
     url: "{{ rpm_repo }}"
@@ -11,3 +13,5 @@
   dnf:
     name: docker-ce
     state: present
+    retries: 5
+    delay: 2
