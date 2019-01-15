@@ -43,7 +43,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - xenial
-        - bionic 
+        - bionic
 
   galaxy_tags:
     - docker
