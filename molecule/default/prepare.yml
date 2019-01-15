@@ -3,11 +3,11 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Install python for Ansible
+    - name: Install python for Ansible Deb/Ubuntu
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
       changed_when: false
       ignore_errors: true
-    - name: Install python for Ansible
+    - name: Install python for Ansible Fedora
       raw: test -e /usr/bin/python || (dnf install -y python2)
       changed_when: false
       ignore_errors: true

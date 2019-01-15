@@ -3,10 +3,10 @@
   dnf:
     name: ['dnf-plugins-core', 'python-dnf', 'python2']
     state: present
-- name: Install docker CE repo
-  shell: 'dnf config-manager --add-repo {{ rpm_repo }}'
-  args:
-    executable: /bin/bash
+- name: Add Docker repo
+  get_url:
+    url: "{{ rpm_repo }}"
+    dest: /etc/yum.repos.d/docer-ce.repo
 - name: Install docker CE
   dnf:
     name: docker-ce
