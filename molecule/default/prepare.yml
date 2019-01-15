@@ -1,14 +1,15 @@
 ---
 - name: Prepare
   hosts: all
+  gather_facts: false
   tasks:
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal python-zipstream)
       become: true
       changed_when: false
-      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+      ignore_errors: true
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (dnf install -y python2)
       become: true
       changed_when: false
-      when: ansible_distribution == 'Fedora'
+      ignore_errors: true
