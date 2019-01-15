@@ -1,7 +1,7 @@
 ---
 - name: Install mandatory packages centos
   dnf:
-    name: ['dnf-plugins-core','python-dnf','python2']
+    name: ['dnf-plugins-core', 'python-dnf', 'python2']
     state: present
 - name: Install docker CE repo
   shell: 'dnf config-manager --add-repo {{ rpm_repo }}'
