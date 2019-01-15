@@ -43,9 +43,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - xenial
-        - bionic  
+        - bionic 
 
-  galaxy_tags: 
+  galaxy_tags:
     - docker
     - docker-ce
   # List tags for your role here, one per line. A tag is a keyword that describes
