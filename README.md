@@ -1,6 +1,8 @@
 Docker
 =========
 
+[![Build Status](https://travis-ci.com/charliemaiors/docker.svg?token=yh45AABQopkgvYGSpm7Z&branch=master)](https://travis-ci.org/charliemaiors/docker)
+
 This role installs docker-ce on the host machine.
 
 Requirements
