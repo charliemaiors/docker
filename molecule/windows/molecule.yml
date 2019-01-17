@@ -27,7 +27,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: default
+  name: windows
   test_sequence:
     - lint
     - dependency
